@@ -4,3 +4,9 @@ const nextConfig = {
 }
 
 module.exports = nextConfig
+
+module.exports = {
+  env: {
+    NEXT_TEST: process.env.NEXT_TEST
+  },
+};
