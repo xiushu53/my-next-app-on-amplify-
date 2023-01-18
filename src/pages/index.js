@@ -7,6 +7,9 @@ export default function Home({ formattedDate }) {
       <p>
         <a href="/ssr">View a server-side rendered page.</a>
       </p>
+      <p>
+        {process.env.NEXT_PUBLIC_TEST}
+      </p>
     </>
   );
 }

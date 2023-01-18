@@ -1,5 +1,5 @@
 // pages/ssr.js
-export default function SSR({ formattedDate }) {
+export default function SSR({ formattedDate, test }) {
   return (
     <>
       <h1>Server-side rendered page</h1>
@@ -8,6 +8,9 @@ export default function SSR({ formattedDate }) {
       </p>
       <p>
         <a href="/">View a static page.</a>
+      </p>
+      <p>
+        {test}
       </p>
     </>
   );
@@ -22,5 +25,6 @@ export async function getServerSideProps() {
   console.log(
     `SSR ran on ${formattedDate}. This will be logged in CloudWatch.`
   );
-  return { props: { formattedDate } };
+  const test = process.env.NEXT_TEST
+  return { props: { formattedDate, test } };
 }
