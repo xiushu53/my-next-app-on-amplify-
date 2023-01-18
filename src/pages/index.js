@@ -1,5 +1,6 @@
 // pages/index.js
 export default function Home({ formattedDate }) {
+  const test = process.env.NEXT_PUBLIC_TEST
   return (
     <>
       <h1>Static page</h1>
@@ -8,7 +9,7 @@ export default function Home({ formattedDate }) {
         <a href="/ssr">View a server-side rendered page.</a>
       </p>
       <p>
-        {process.env.NEXT_PUBLIC_TEST}
+        {test}
       </p>
     </>
   );
